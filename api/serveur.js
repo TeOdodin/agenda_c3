@@ -52,4 +52,4 @@ app.use('/logout', (req, res) => {
 app.use((req, res) => {
     res.status(404).json(`Route "${req.url}" not found or missing resource.....\n`);
 });
-app.listen(8080);
+app.listen(80);
