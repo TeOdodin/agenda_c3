@@ -1,0 +1,32 @@
+#popup {
+    position: absolute;
+    background-color: rgb(0, 50, 140);
+    color: white;
+    width: 500px;
+    height: 250px;
+    padding: 5px 20px 20px 20px;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -250px;
+}
+
+h1#popup_title {
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+select {
+    margin-bottom: 20px;
+}
+
+input#ajout {
+    position: absolute;
+    display: block;
+    bottom: 20px;
+    width: 60px;
+    left: 50%;
+    margin: auto auto auto -30px;
+}

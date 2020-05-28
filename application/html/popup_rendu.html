@@ -1,0 +1,45 @@
+<div class="lock">
+    <div class="popup">
+        <h3>{{actionType}} Rendu</h3>
+        <form {{^isNew}}event-id="{{rendu.id_travail}}"{{/isNew}}>
+            <div class="id_infos">
+                <div>
+                    <label for="date_rendu">Date</label>
+                    <input type="datetime-local" id="date_rendu" name="date_rendu" value="{{rendu.date_travail}}" />
+                </div>
+                <div>
+                    <label for="matiere_rendu">Matière</label>
+                    <select id="matiere_rendu" name="matiere_rendu" >
+                        {{#matieres}}
+                        <option value="{{id_matiere}}" {{#selected}}selected{{/selected}}>{{nom_matiere}} - {{annee}} {{specialite}}</option>
+                        {{/matieres}}
+                    </select>
+                </div>
+                {{#professeur}}
+                <div>
+                    <label for="lien_rendu">Rendu</label>
+                    <input type="text" id="lien_rendu" name="lien_rendu" value="{{rendu.lien_rendu}}" />
+                </div>
+                <div>
+                    <label for="type_rendu">Type</label>
+                    <select id="type_rendu" name="type_rendu" >
+                        {{#types}}
+                        <option value="{{value}}" {{#selected}}selected{{/selected}}>{{value}}</option>
+                        {{/types}}
+                    </select>
+                </div>
+                <div>
+                    <label for="contact">Contact</label>
+                    <input type="text" id="contact" name="contact" />
+                </div>
+                {{/professeur}}
+            </div>
+            <label for="desc_rendu">Description</label>
+            <input type="textarea" id="desc_rendu" name="desc_rendu" value="{{rendu.description_travail}}" />
+            <div class="controls">
+                <button class="cancel">Annuler</button>
+                <button class="{{#isNew}}validate{{/isNew}}{{^isNew}}patch_work{{/isNew}}">{{actionSubmit}}</button>
+            </div>
+        </form>
+    </div>
+</div>
